@@ -133,7 +133,7 @@ public class Test {
                     break;
                 case "hour":
                     EmployeeSalaryStrategy hourEmployee = new HourEmployee();
-                    if (employee.getBirthday().getMonth() == 9) {
+                    if (employee.getBirthday().getMonth() == month) {
                         //小时工生日薪资
                         BirthdaySalary birthdayHourSalary = new BirthdaySalary(hourEmployee);
                         sumSalary += birthdayHourSalary.calcBirthdaySalary(new HourEmployee(40, employee.getWorkingHours()), 100);
@@ -145,7 +145,7 @@ public class Test {
                     break;
                 case "sale":
                     EmployeeSalaryStrategy salesEmployee = new SalesEmployee();
-                    if (employee.getBirthday().getTime() == 9) {
+                    if (employee.getBirthday().getTime() == month) {
                         //销售过生日薪资
                         BirthdaySalary birthdaySalesSalary = new BirthdaySalary(salesEmployee);
                         sumSalary += birthdaySalesSalary.calcBirthdaySalary(new SalesEmployee(employee.getAmount(), 0.05, 0.08), 100);
